@@ -1,0 +1,83 @@
+/* Minor changes ~~ will be shown with -- in the css */  
+
+
+/* Backstory about fictional owner */ 
+
+.about--owner 
+{
+    text-align: center;
+    max-width: 70%;
+    margin: auto;  
+    margin-top: 5rem;
+
+    .top 
+    {
+        h3 
+        {
+            font-family: $primaryFont;
+            font-weight: normal;
+            color: $primaryClr;
+            font-size: 1rem;  
+        } 
+
+        h2 
+        {
+            font-family: $secondaryClr;
+            font-weight: 800;
+            color: #333;
+            padding: .8rem 0;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+    } 
+
+    .content 
+    {
+        img 
+        {
+            display: inline-block;
+            padding-bottom: 2rem;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        } 
+
+        p 
+        {
+            font-family: $primaryFont;
+            line-height: 1.8;
+            color: #fff;
+            text-align: justify;
+            padding-top: 1.5rem;
+            background: $primaryClr;
+            font-size: 1rem;
+            padding: 2.5rem;
+            font-weight: lighter;
+            border-radius: 5px;
+            letter-spacing: 1px;
+        }
+    }
+} 
+
+/* Change background height */ 
+
+.bg__cover 
+{
+    height: 95vh; 
+
+} 
+
+/* Change Background*/
+
+
+/* Query for Above */ 
+
+@media (max-width: 572px) 
+{
+    .about--owner  
+    { 
+        max-width: 90%;
+        margin: auto;
+        margin-top: 5rem;
+    }
+}

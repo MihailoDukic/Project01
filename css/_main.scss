@@ -1,0 +1,910 @@
+/* Global Reset */ 
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: all .5s ease;
+}
+
+body 
+{
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+}
+
+::selection 
+{
+  color: #fff;
+  background: $primaryClr;
+}
+
+/* Preloader */
+
+.preloader 
+{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient($primaryClr, $secondaryClr);
+    position: fixed;
+    z-index: 9999;
+    visibility: visible;
+    top: 0;
+    left: 0;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+
+    div {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      @keyframes arrows {
+        0%,
+        100% {
+          color: #f4f4f4;
+          transform: translateY(0);
+        }
+        50% {
+          color: #f4f4f4;
+          transform: translateY(20px);
+        }
+      }
+      
+      span {
+        --delay: 0s;
+        animation: arrows 1s var(--delay) infinite ease-in;
+
+        i 
+        {
+            color: #f4f4f4;
+        }
+      }
+}
+
+.preloader.done
+{
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+/**********************************************************************************************************************************************************************************************************************/ 
+
+/* Main */ 
+
+/* Header */ 
+
+.bg__cover 
+{
+    background: url('/images/bg___main.jpg');
+    width: 100%;
+    height: 79vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.bg__cover .container-flex  
+{
+    @include flexbox(space-between);
+    position: relative;
+    height: 90px;
+    padding: 0 1.3rem;
+}
+
+.bg__cover .container-flex  .logo 
+{
+    font-family: $secondFont;
+    @include anchorReset(#fff);
+    font-weight: bold;
+    font-size: 2rem; 
+    font-family: $secondFont;
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+
+    i 
+    {
+        font-size: 1.5rem;
+        color: $primaryClr;
+    }
+} 
+
+/* Mobile menu */
+
+.bg__cover .container-flex .toggle-menu 
+{
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+} 
+
+/* Desktop menu hide on mobile */ 
+
+.bg__cover .container-flex .desktop-menu 
+{
+    display: none;
+}
+
+.bg__cover .container-flex .mobile-menu 
+{
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    height: 0;
+}
+
+.bg__cover .container-flex .mobile-menu .list .list-item 
+{
+    padding: 1rem 0 1rem 1.3rem;
+    list-style: none;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.bg__cover .container-flex .mobile-menu .list .list-item .item 
+{
+    @include anchorReset(#333);
+    font-weight: bold;
+    font-family: $primaryFont;
+    &:hover 
+    {
+        color: $primaryClr;
+    }
+}
+
+
+
+/* Showcase */ 
+
+.bg__cover .showcase 
+{
+    height: 75%;
+    @include flexbox(center);
+
+
+
+    .content 
+    {
+        text-align: center;
+
+        h3 
+        {
+            font-family: $primaryFont;
+            color: $primaryClr;
+            font-weight: normal;
+            padding-bottom: 1rem;
+        }
+
+        h2 
+        {
+            font-family: $secondFont;
+            font-size: 1.8rem;
+            color: #f4f4f4;
+            padding-bottom: 3rem;
+            font-weight: normal;
+        } 
+
+        
+        .btn 
+        {
+            @include anchorReset(#f4f4f4);
+            font-family: $primaryFont;
+            padding: .7rem  1.5rem;
+            background: $primaryClr;
+            font-weight: normal;
+            font-size: .9rem;
+            &:hover 
+            {
+                background: $secondaryClr;
+            }
+        }
+    }
+}
+
+/*********************************************************************************************/
+
+
+/* About us */ 
+
+.aboutus 
+{
+    width: 100%;
+    height: auto; 
+    background: $primaryClr;
+    padding: 0 1.3rem; 
+    margin-top: -5rem;
+}
+
+.aboutus .container-flex 
+{
+    
+    @include grid(400px , auto);
+    padding: 2rem 0;
+}
+
+.aboutus .container-flex .left 
+{
+    h3 
+    {
+        font-family: $primaryFont;
+        color: #fff;
+        font-weight: normal;
+        padding-bottom: 1rem;
+    }
+
+    h2 
+    {
+        font-family: $secondFont;
+        color: #333;
+        font-weight: bold;
+        font-size: 2.5rem;
+        padding-bottom: 1rem;
+    }
+
+    p 
+    { 
+        font-family: $primaryFont;
+        color: #333;
+        font-weight: normal;
+        font-size: .9rem;
+        padding-bottom: 1rem;
+        line-height: 1.8; 
+
+        span 
+        {
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+
+    .btn 
+    {
+        @include anchorReset(#f4f4f4);
+        font-family: $primaryFont;
+        padding: .7rem  1.1rem;
+        background: #111;
+        font-weight: normal;
+        font-size: .9rem;
+        display: block;
+        margin-bottom: 2rem;
+        text-align: center;
+        &:hover 
+        {
+            background: $secondaryClr;
+        }
+    } 
+}
+
+.aboutus .container-flex .right 
+{
+    min-width: 300px;
+    height: 350px; 
+    padding: 0 1.3rem;
+
+    img 
+    {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*************************************************************************************************/ 
+
+
+/* Showcase menu */ 
+
+.menu 
+{
+    width: 100%;
+    height: auto;
+    margin: 3rem 0;
+}
+
+.menu .top-content 
+{
+    text-align: center;
+
+    h3 
+    {
+        color: $primaryClr;
+        font-family: $primaryFont;
+        padding-bottom: 1rem;
+        font-weight: normal;
+    }
+
+    h2 
+    {
+        font-family: $secondFont;
+    }
+}
+
+/* Button toggles styles */ 
+
+.menu .filter-btn 
+{
+    padding: 10px;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.menu .filter-btn ul li{
+	display: inline-block;
+	background-color:$primaryClr;
+	padding:6px 15px;
+	color:#ffffff;
+	border-radius:5px;
+	margin:0px 1px;
+	cursor: pointer;
+    font-size:16px;
+    text-align: center;
+    font-family: $primaryFont;
+}
+
+.menu .filter-btn ul li.active{
+	background-color: $secondaryClr;
+}
+
+
+/* container styling */ 
+
+.menu .container-grid 
+{
+    @include grid(250px, 380px);
+    justify-content: center;
+    grid-gap: 1.5rem;
+}
+
+.menu .container-grid .box
+{
+    border: #d9d9d9 1px solid;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    position:  relative;
+    height: 500px; 
+    @include flexbox(center);
+    flex-direction: column;
+    padding: 0 1.3rem;  
+    &:hover 
+    {
+        .modal 
+        {
+            transform: scale(1);
+        }
+    }
+
+    .open 
+    {
+        position: absolute;
+        right: 10%;
+        top: 10%;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    &:hover
+    {
+        background: $primaryClr;
+        color: #fff;
+    }  
+    &:hover h3,
+    &:hover h2,
+    &:hover p 
+    {
+        color: #fff;
+    }
+
+    /* Modal hover*/
+
+    .modal 
+    {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(0);
+        background: $secondaryClr;
+        z-index: 1234; 
+        text-align: left;
+        padding: 0 1.3rem;
+
+        .content 
+        {  
+            @include flexbox(center);
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            .close 
+            {
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer; 
+            margin-top: 2rem;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+        
+            }  
+
+            h3 
+            {
+                padding-bottom: 1.5rem;
+                color: #fff;
+                font-weight: lighter;
+            }  
+
+            p 
+            {
+                line-height: 1.8;
+                color: #f4f4f4;
+                padding-bottom: 2rem;
+                font-size: .9rem;
+                font-family: $primaryClr;
+            } 
+
+            a 
+            {
+                @include anchorReset(#fff);
+                background: $primaryClr; 
+                padding: .9rem 1.2rem;
+                font-family: $primaryFont;
+                font-size: .9rem;
+                border-radius: 5px;
+                display: inline-block; 
+
+                &:hover 
+                {
+                    background: #333;
+                }
+            }
+        }
+    }
+} 
+
+
+.menu .container-grid .box h3
+{
+    font-family: $secondFont;
+    font-weight: lighter;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.menu .container-grid .box p 
+{
+    font-family: $primaryFont;
+    color: #333;
+    font-weight: lighter;
+}
+
+.menu .container-grid .box span 
+{
+    display: inline-block;
+    padding: 1rem 0;
+    font-family: $secondFont;
+    font-size: 2rem;
+}
+
+.menu .container-grid .box img 
+{
+    width: 180px;
+    height: 180px;
+    display: inline-block;
+    border-radius: 50%;
+} 
+
+
+
+/* Fixed Anchor to push to top */ 
+
+.fixedanchor 
+{
+    position: fixed;
+    top: 90%;
+    right: 5%;
+    z-index: 123;
+    @include anchorReset($primaryClr);
+    font-size: 2.5rem;
+}
+
+/***************************************************************************************/ 
+
+/* Video */ 
+
+.video 
+{
+    background: url('../images/video__bg.jpg');
+    background-attachment: fixed;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    background-size: cover;
+    margin: 3em 0;
+}
+
+
+.video .wrapper 
+{
+    @include flexbox(center);
+    height: 100%; 
+
+    a 
+    {
+        margin: 40px;
+        width: 80px;
+        height: 80px;
+        color: #fff;
+        text-align: center;
+        background: $primaryClr;
+        border-radius: 50%;
+        animation: shadow-pulse 1.5s infinite; 
+        @include flexbox(center);
+        @include anchorReset(#fff);  
+
+        @keyframes shadow-pulse
+        {
+          0% {
+            box-shadow: 0 0 0 0px $primaryClr;
+          }
+          100% {
+            box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+          }
+        }
+        
+        @keyframes shadow-pulse-big
+        {
+          0% {
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+          }
+          100% {
+            box-shadow: 0 0 0 70px rgba(0, 0, 0, 0);
+          }
+        }
+
+        i 
+        {
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+    }
+}
+
+/*********************************************************************************************/ 
+
+
+/* Testimonials and glider */
+
+.testimonials 
+{
+    width: 100%;
+    height: auto;
+    padding: 5rem 0; 
+
+    .top__content 
+    {
+        text-align: center; 
+
+        h3 
+        {
+            font-family: $primaryFont;
+            font-weight: normal;
+            color: $primaryClr;
+            font-size: 1rem;
+        }
+
+        h2 
+        {
+            font-family: $secondaryClr;
+            font-weight: 800;
+            color: #333;
+            padding: .8rem 0;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .glider-contains .glider 
+    {
+        margin: 0 1.2rem; 
+        .box 
+        {
+            margin: 0 .5rem;
+        }
+        .box .text 
+        {
+            position: relative; 
+            border: 1px solid $primaryClr;
+            padding: 1rem; 
+
+            p 
+            {
+                font-size: 1rem;
+                font-family: $primaryFont;
+                color: #666;
+                line-height: 1.6;
+            }  
+
+            i 
+            {
+                position: absolute;
+                bottom: -26px;
+                color: $primaryClr;
+                font-size:  2.5rem;
+            }
+        } 
+
+        .content-flex
+        {
+            padding-top: 2rem;
+            @include flexbox(flex-start);
+
+            img 
+            {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+              
+            }
+
+            .flex__name 
+            {
+                margin-left: 1rem;
+
+                .link__name
+                {
+                   
+                    padding-top: .5rem;
+                    display: block;
+                    font-size: 1.5rem;
+                    font-weight: lighter;
+                } 
+
+                i 
+                {
+                    color: $secondaryClr;
+                    padding-top: 0.2rem;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+    }
+} 
+
+
+
+/******************************************************************************/
+
+.contact 
+{
+    background: url('../images/contact__bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 65vh;
+    background-size: cover;
+
+
+    .container__flex 
+    {
+        @include flexbox(flex-start);
+        height: 100%;
+
+        .content 
+        {
+            background: #fff;
+            width: 380px;
+            height: auto;
+            padding: 2rem;
+            margin-left: 1.3rem;
+
+            h2 
+            {
+                font-family: $secondFont;
+                padding-bottom: 1.1rem;
+                font-size: 1.8rem;
+                font-weight: lighter;
+            }
+
+            .heading
+            {
+                font-family: $primaryFont;
+                padding-bottom: 1rem;
+                padding-top: 1rem;
+                color: #333;
+                font-size: 1.1rem;
+                font-weight: normal;
+            }
+
+            
+            li 
+            {
+                list-style: none;
+                font-family: $primaryFont;
+                font-size: 0.9rem;
+                color: #666;
+                padding-bottom: 0.2rem;
+                font-weight: lighter;
+            }
+        }
+    }
+}
+
+/******************************************************************************/
+
+/* Footer */ 
+
+footer 
+{
+    background: #111;
+    padding-bottom: 1rem;
+    width: 100%;
+    padding-top: 5rem;
+
+    .container__grid 
+    {
+        padding: 0rem 1.3rem 3.5rem 1.3rem;
+        padding-bottom: 1rem;
+        @include grid(200px, 500px);
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+
+        .box 
+        {
+            .logo 
+            {
+                @include anchorReset(#f4f4f4);
+                font-weight: bold;
+                font-size: 1.8rem;
+                display: inline-block;
+                padding-top: 5rem;
+              
+    
+                i 
+                {
+                    color: $primaryClr;
+                    padding-bottom: 1.5rem;
+                }
+            }
+
+            .tel 
+            {
+                @include anchorReset(#999);
+                font-family: $primaryFont;
+            }
+
+            .email 
+            {
+                @include anchorReset($primaryClr);
+                font-family: $primaryFont;
+                padding-top: .5rem;
+                display: inline-block;
+                font-weight: lighter;
+                font-size: .9rem;
+            }
+
+            .media 
+            {
+                padding-top: 1.5rem;
+
+                a 
+                {
+                    @include anchorReset(#fff);
+                    padding: 5px;
+                }
+            }
+
+            .heading 
+            {
+                padding-top: 1.5rem;
+                color: #fff;
+                list-style: none;
+                font-family: $secondFont;
+                font-weight: bold;
+                padding-bottom: 1rem;
+                font-size: 1rem;
+            }
+
+            li 
+            {
+                padding: 8px; 
+                list-style: none;
+
+                a 
+                {
+                    @include anchorReset(#999);
+                    font-weight: lighter;
+                    font-family: $primaryFont;
+                    &:hover 
+                    {
+                        color: $primaryClr;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            h2 
+            {
+                padding-top: 1.5rem;
+                color: #fff;
+                list-style: none;
+                font-family: $secondFont;
+                font-weight: bold;
+                padding-bottom: 1rem;
+                font-size: 1rem;
+            }
+
+            input 
+            {
+                padding: 12px;
+                width: 85%;
+                border: none;
+
+            }
+
+            button 
+            {
+                width: 15%;
+                padding: 12px;
+                background: $primaryClr;
+                border: none;
+
+                i 
+                {
+                    color: #fff;
+                }
+            }
+
+            p 
+            {
+                padding-top: 1.5rem;
+                color: #999;
+                font-weight: normal;
+                font-family: $primaryFont;
+                font-size: .9rem;
+                line-height: 1.8;
+            }
+        }
+    }
+
+    .bottom__copyright 
+    {
+        text-align: center;
+        color: #666;
+        font-family: $primaryFont;
+        font-size: .8rem;
+        margin-top: 3rem;
+        padding-bottom: 4rem;
+        padding: 0 1.2rem;
+        line-height: 1.8;
+        padding-bottom: 2.5rem;
+
+        i 
+        {
+            font-size: 16px;
+        }
+
+        span 
+        {
+            color: $primaryClr;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+}

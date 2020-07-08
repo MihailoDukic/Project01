@@ -1,0 +1,259 @@
+/* Breakpoint 01 */ 
+
+@media (min-width: 768px) 
+{   
+    .aboutus .container-flex  
+    {
+        padding-right: 1.3rem;
+    }
+    
+    .bg__cover .showcase 
+    { 
+        .content 
+        {
+            h3 
+            {
+                font-size: 2rem;
+            } 
+
+            h2 
+            {
+                font-size: 2.5rem;
+            } 
+
+        }
+    }
+
+
+    .aboutus .container-flex 
+    {
+        margin: 0 1.3rem;
+    }  
+ 
+
+    .testimonials .glider-contains 
+    {
+        max-width: 75%;
+        margin: auto;
+    } 
+
+    .contact .container__flex  .content 
+    {
+        width: 60%;
+        margin-left: 5rem;
+    }
+
+
+}
+
+/* Breakpoint 02 */ 
+
+@media (min-width: 990px) { 
+
+    /* change background  */ 
+
+    .bg__cover 
+    {
+        background-position: center top; 
+
+        .container-flex 
+        {
+            @include flexbox(space-around);
+        }
+    }
+
+    .aboutus 
+    {
+
+    .container-flex 
+    {  
+
+
+       .left 
+       {
+           margin-right: 2rem;
+
+           a 
+           {
+               width: 50%;
+               margin-top: 1.5rem;
+           }
+       }  
+
+       .right 
+       {
+           margin-right: 1.5rem; 
+           width: 480px;
+           height: 550px;
+       }
+       
+    } 
+
+}
+
+    /* Mobile menu hide */ 
+
+    .bg__cover .container-flex .mobile-menu, 
+    .bg__cover .container-flex .toggle-menu 
+    {
+        display: none;
+    }
+
+    /* Show desktop menu */ 
+
+    .bg__cover .container-flex .desktop-menu 
+    {
+        display: block !important; 
+
+        .list 
+        {
+            @include flexbox(center);
+            
+            .list-item 
+            {
+                padding: 20px;
+                list-style: none;
+
+                .item 
+                {
+                    @include anchorReset(#fff);
+                    font-family: $primaryFont;
+                    font-weight: bold;
+                    &:hover 
+                    {
+                        color: $primaryClr;
+                    }
+
+                } 
+                
+                .hover-submenu 
+                {
+                    position: relative;
+                }
+
+                .submenu-desktop 
+                {
+                    position: absolute;
+                    top: 75%;
+                    background: #f4f4f4;
+                    overflow: hidden;
+                    height: 0;
+                    
+
+                    li 
+                    {
+                        list-style: none; 
+                        padding: 12px;
+
+                        a 
+                        {
+                            @include anchorReset(#333);
+                            font-family: $primaryFont;
+                            font-weight: 700;
+                            font-size: 0.9rem;
+                            &:hover 
+                            {
+                                color: $primaryClr;
+                            }
+                        }
+                    }
+                } 
+            } 
+
+        }  
+    }  
+
+    .bg__cover .container-flex .desktop-menu .hover-submenu:hover .submenu-desktop
+    {
+        height: 124px;
+    } 
+
+    /* Testimonials */ 
+
+    .testimonials .glider-contains 
+    {
+        max-width: 60%;
+        margin: auto;
+    } 
+    
+    /* contact */ 
+
+    .contact .container__flex  .content 
+    {
+        width: 55%;
+        margin-left: 5rem;
+    }
+} 
+
+
+/* Breakpoint 03 */ 
+
+@media (min-width: 1260px) 
+{   
+    /* set keyframe for an image slidershow */
+    .bg__cover 
+    {
+        animation: slideAnimate 8s  ease infinite;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100vh; 
+    
+
+        @keyframes slideAnimate {
+            0% {background: url('../images/anime1.jpg'); background-size: cover;}
+            25% {background: url('../images/anime2.jpg'); background-size: cover;}
+            50% {background: url('../images/anime3.jpg'); background-size: cover;}  
+            50% {background: url('../images/anime4.jpg'); background-size: cover;}  
+            100% {background: url('../images/anime1.jpg'); background-size: cover;}
+        }
+    }
+
+    .aboutus 
+    {
+        max-width: 70%; 
+        margin: -10rem auto;
+        margin-bottom: 5rem;
+        width: 100%;  
+        
+
+        .container-flex 
+        {
+            @include flexbox(space-between);
+            justify-items: center;
+            align-items: center;
+            width: 100%; 
+
+            .left 
+            {
+                width: 45%;
+                padding: 0;
+                margin: 0;
+            } 
+
+            .right 
+            {
+                width: 50%; 
+                height: 600px;
+                padding: 0;
+                margin: 0;
+    
+                img 
+                {
+                    width: 100%;
+              
+                }
+            }
+        }
+    }   
+
+    /* contact */  
+
+    .contact .container__flex  .content 
+    {
+        width: 30%;
+        margin-left: 5rem;
+    }
+
+
+}

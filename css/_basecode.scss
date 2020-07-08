@@ -1,0 +1,47 @@
+/* Fonts imported from google fonts | Also included in main folder */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+/* Custom Variables */
+
+$primaryClr: #379bc2;
+$secondaryClr: #1c556b;
+$primaryFont: 'Montserrat', sans-serif;
+$secondFont: 'Playfair Display', sans-serif;
+
+/* Custom Scrollbar */ 
+
+::-webkit-scrollbar 
+{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb 
+{
+    background: $secondaryClr;
+}
+
+
+/* Custom Mixins */
+
+@mixin flexbox($pos) 
+{
+    display: flex;
+    justify-content: $pos;
+    align-items: center;
+}
+
+@mixin grid($s1,$s2) 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($s1, $s2));;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+@mixin anchorReset($clr) 
+{
+    text-decoration: none;
+    color: $clr;
+}

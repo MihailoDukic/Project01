@@ -1,0 +1,105 @@
+/* Contact form */
+.contact__container {
+    background: #fff;
+    padding: 4rem 1.2rem;
+  }
+  
+  .contact__container .top__content h2 {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 1.8rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .contact__container .form {
+    max-width: 60%;
+    margin: auto;
+  }
+  
+  .contact__container .form .form__control {
+    position: relative;
+  }
+  
+  .contact__container .form .form__control textarea,
+  .contact__container .form .form__control input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+  }
+  
+  .contact__container .form .form__control.success input,
+  .contact__container .form .form__control.success textarea {
+    border-color: #2ecc71;
+  }
+  
+  .contact__container .form .form__control.error input,
+  .contact__container .form .form__control.error textarea {
+    border-color: #e74c3c;
+  }
+  
+  .contact__container .form small {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .contact__container .form .form__control.error small {
+    visibility: visible;
+    color: #e74c3c;
+  }
+  
+  .contact__container .form ::-webkit-input-placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: #999;
+    font-weight: lighter;
+  }
+  
+  .contact__container .form :-ms-input-placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: #999;
+    font-weight: lighter;
+  }
+  
+  .contact__container .form ::-ms-input-placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: #999;
+    font-weight: lighter;
+  }
+  
+  .contact__container .form ::placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: #999;
+    font-weight: lighter;
+  }
+  
+  .contact__container button {
+    padding: .9rem 1.5rem;
+    border: none;
+    background: $primaryClr;
+    color: #fff;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    margin-top: 1rem;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .contact__container button:hover {
+    background: $secondaryClr;
+    transition: .5s ease;
+  }
+
+  /* Change max-width on mobile */ 
+
+  @media (max-width: 600px) {
+    .contact__container .form 
+    {
+      max-width: 95%;
+      margin: auto;
+    }
+  }
